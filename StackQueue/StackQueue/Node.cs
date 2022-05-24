@@ -23,7 +23,7 @@ namespace StackQueue
         public void Push(int data)
         {
             Node Node = new Node(data);
-            if(top == null)
+            if (top == null)
             {
                 top = Node;
             }
@@ -33,16 +33,36 @@ namespace StackQueue
                 top = Node;
             }
         }
-        public void DisplayStack()
+        public int DisplayStack()
         {
             Node temp = top;
-           // int count = 0;
-            while (temp != null)
-            {
-               // count++;
+            int count = 0;
+             while(temp != null)
+             {
+                count++;
                 Console.WriteLine("{0}", temp.data);
                 temp = temp.next;
+             }
+            return count;
+        }
+
+        public void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
             }
+            Console.WriteLine("{0} is at the top of the stack ", this.top.data);
+        }
+
+        public void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            Console.WriteLine("Value popped is {0} ", this.top.data);
+            this.top = this.top.next;
         }
     }
 }

@@ -15,6 +15,12 @@ namespace StackQueue
             stack.Push(30);
             stack.Push(56);
             Console.WriteLine("Stack: ");
+            int count = stack.DisplayStack();
+            for (int i = 0; i <= count; i++)
+            {
+                stack.Peek();
+                stack.Pop();
+            }
             stack.DisplayStack();
         }
     }
