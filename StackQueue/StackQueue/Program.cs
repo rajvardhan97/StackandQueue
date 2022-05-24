@@ -35,6 +35,14 @@ namespace StackQueue
                     stack.Enqueue(70);
                     Console.WriteLine("Queue:");
                     stack.DisplayQueue();
+                    Console.WriteLine("Dequeue");
+                    int count1 = stack.DisplayQueue();
+                    for(int i=0; i<= count1; i++)
+                    {
+                        stack.Dequeue();
+                    }
+                    
+                    stack.DisplayQueue();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");

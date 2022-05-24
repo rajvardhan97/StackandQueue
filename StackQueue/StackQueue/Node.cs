@@ -83,18 +83,30 @@ namespace StackQueue
                 temp.next = node;
             }
         }
-        public void DisplayQueue()
+        public void Dequeue()
+        {
+            if (this.front == null)
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            front = front.next;
+        }
+
+        public int DisplayQueue()
         {
             Node temp = front;
+            int count = 0;
             if(temp == null)
             {
                 Console.WriteLine("Queue is empty");
             }
             while (temp != null)
             {
+                count++;
                 Console.WriteLine(temp.data);
                 temp = temp.next;
             }
+            return count;
         }
     }
 }
