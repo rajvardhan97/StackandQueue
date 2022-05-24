@@ -16,7 +16,7 @@ namespace StackQueue
             this.next = null;
         }
     }
-    public class Stack
+    public class StackandQueue
     {
         Node top;
 
@@ -63,6 +63,38 @@ namespace StackQueue
             }
             Console.WriteLine("Value popped is {0} ", this.top.data);
             this.top = this.top.next;
+        }
+
+        Node front;
+        public void Enqueue(int data)
+        {
+            Node node = new Node(data);
+            if (this.front == null)
+            {
+                this.front = node;
+            }
+            else
+            {
+                Node temp = front;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+        }
+        public void DisplayQueue()
+        {
+            Node temp = front;
+            if(temp == null)
+            {
+                Console.WriteLine("Queue is empty");
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data);
+                temp = temp.next;
+            }
         }
     }
 }
